@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insha ❤️ Amaan Shahid</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh; overflow-x:hidden; font-family:Georgia,'Times New Roman',serif;
+  color:#fff; background:radial-gradient(circle at top,#4b1630 0%,#190814 48%,#08030a 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:45px 45px;animation:stars 18s linear infinite;
+}
+@keyframes stars{to{background-position:90px 90px}}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
+.heart{position:absolute;bottom:-40px;font-size:22px;animation:float 7s linear forwards;opacity:.8}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:50px 20px;position:relative}
+.card{width:min(900px,94vw);text-align:center;padding:55px 28px;border:1px solid rgba(255,255,255,.18);border-radius:30px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);box-shadow:0 20px 80px rgba(0,0,0,.45)}
+.small{letter-spacing:4px;text-transform:uppercase;font-size:13px;color:#f8b8d4}
+h1{font-size:clamp(44px,9vw,100px);line-height:1.05;margin:18px 0;background:linear-gradient(90deg,#fff,#ffc4dc,#fff);-webkit-background-clip:text;color:transparent}
+h2{font-size:clamp(30px,6vw,58px);margin-bottom:22px}
+p{font-family:Arial,sans-serif;line-height:1.8;color:#f5dce7;font-size:17px}
+.name{font-style:italic}
+button{
+  margin-top:30px;border:0;padding:16px 30px;border-radius:999px;cursor:pointer;
+  color:#2a0718;background:#ffd0e2;font-weight:bold;font-size:16px;
+  box-shadow:0 10px 30px rgba(255,120,180,.25);transition:.25s
+}
+button:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 15px 40px rgba(255,120,180,.4)}
+.hidden{display:none}
+#letter{margin-top:30px;text-align:left;padding:28px;border-radius:20px;background:rgba(0,0,0,.2);animation:appear .7s ease}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.signature{text-align:right;margin-top:25px;font-style:italic;font-size:20px;color:#ffd0e2}
+.scroll{position:absolute;bottom:25px;font-family:Arial,sans-serif;font-size:12px;opacity:.7}
+.counter{margin-top:25px;font-family:Arial,sans-serif;font-size:14px;color:#efb2cd}
+footer{padding:25px;text-align:center;color:#b98da3;font-family:Arial,sans-serif;font-size:12px}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+
+<section>
+  <div class="card">
+    <div class="small">1 August 2026 · National Girlfriend Day</div>
+    <h1>Insha ❤️<br>Amaan Shahid</h1>
+    <p>Today isn't just another day…<br>
+    It's a little reminder of how lucky I feel to have you in my life.</p>
+    <button onclick="showLove()">Tap for your surprise 💌</button>
+    <div id="letter" class="hidden">
+      <p>
+      My Insha,<br><br>
+      I don't need a special day to tell you how important you are to me,
+      but today gives me one more reason to say it.
+      You are the person who makes my ordinary days feel special.
+      Your name, your smile, your little ways — somehow, they all have a
+      very special place in my heart.<br><br>
+      I hope you always know that you are loved, appreciated, and incredibly
+      precious to me. And if I could choose one person to make countless
+      more memories with, I would choose you again and again.<br><br>
+      Happy National Girlfriend Day, my love. ❤️<br>
+      Here's to us — <b>Insha Amaan Shahid</b> — and to all the beautiful
+      moments still waiting for us.
+      </p>
+      <div class="signature">Forever yours,<br>Amaan ❤️</div>
+    </div>
+    <div class="counter">Made with love, especially for Insha ✨</div>
+  </div>
+  <div class="scroll">↓ A little surprise made just for you ↓</div>
+</section>
+
+<footer>© 2026 · Insha Amaan Shahid · Made with ❤️ by Amaan</footer>
+
+<script>
+function showLove(){
+  document.getElementById('letter').classList.remove('hidden');
+  for(let i=0;i<35;i++) setTimeout(createHeart,i*70);
+  document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function createHeart(){
+  const h=document.createElement('div');
+  h.className='heart';
+  h.textContent=['❤️','💖','💕','💗','✨'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(15+Math.random()*25)+'px';
+  h.style.animationDuration=(5+Math.random()*5)+'s';
+  document.getElementById('hearts').appendChild(h);
+  setTimeout(()=>h.remove(),10000);
+}
+setInterval(()=>{if(Math.random()>.35)createHeart()},900);
+</script>
+</body>
+</html>
